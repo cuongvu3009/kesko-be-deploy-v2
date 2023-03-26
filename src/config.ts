@@ -1,5 +1,4 @@
 import dotenv from 'dotenv';
-import bunyan from 'bunyan';
 
 dotenv.config();
 
@@ -23,11 +22,6 @@ class Config {
     this.NODE_ENV = process.env.NODE_ENV || this.DEFAULT_NODE_ENV;
     this.CLIENT_URL = process.env.CLIENT_URL || this.DEFAULT_CLIENT_URL;
     this.SERVER_PORT = process.env.SERVER_PORT || '';
-  }
-
-  //	logger
-  public createLogger(name: string): bunyan {
-    return bunyan.createLogger({ name, level: 'debug' });
   }
 
   //	make sure all env variable in config exist
